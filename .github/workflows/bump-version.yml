@@ -1,0 +1,54 @@
+# Sube la versión del plugin cuando cambia la skill.
+# `claude plugin update` solo toma una versión nueva si cambia `version` en plugin.json:
+# sin este paso, un cambio en la skill no les llega a quienes la tienen instalada.
+name: Bump version
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - ".github/workflows/bump-version.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bump-version
+  cancel-in-progress: false
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Bump patch version unless this push already changed it
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          now=$(node -p "require('./.claude-plugin/plugin.json').version")
+          before=""
+          if git cat-file -e "$BEFORE:.claude-plugin/plugin.json" 2>/dev/null; then
+            before=$(git show "$BEFORE:.claude-plugin/plugin.json" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>console.log(JSON.parse(s).version))")
+          fi
+          if [ -n "$before" ] && [ "$before" != "$now" ]; then
+            echo "Version already changed in this push ($before -> $now). Nothing to do."
+            exit 0
+          fi
+          next=$(node -e "const [a,b,c]='$now'.split('.').map(Number);console.log([a,b,c+1].join('.'))")
+          node -e "
+            const fs = require('fs');
+            const p = '.claude-plugin/plugin.json';
+            const j = JSON.parse(fs.readFileSync(p, 'utf8'));
+            j.version = '$next';
+            fs.writeFileSync(p, JSON.stringify(j, null, 2) + '\n');
+          "
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .claude-plugin/plugin.json
+          git commit -m "Bump version to $next"
+          git push origin HEAD:main

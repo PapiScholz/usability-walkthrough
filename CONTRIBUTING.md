@@ -20,6 +20,10 @@ There is no automated check yet. Until there is:
 - **Report, don't implement.** The audit changes no product code; every proposal must stand alone in the report.
 - **Measured, not felt.** A proposal without steps before and after is not a proposal.
 
+## Versions
+
+Don't bump the version by hand. Every push to `main` that touches `skills/` gets a patch bump in `.claude-plugin/plugin.json` from CI (`.github/workflows/bump-version.yml`), because `claude plugin update` only picks up a change when the version changes. For a minor or major bump, change it yourself in the same push: CI sees it and leaves it alone. CI commits to `main`, so pull before your next change.
+
 ## Commits and pull requests
 
 One topic per pull request, a short imperative commit subject, and the reason in the body.
