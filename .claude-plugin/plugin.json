@@ -1,0 +1,14 @@
+{
+  "name": "usability-walkthrough",
+  "displayName": "Usability Walkthrough",
+  "version": "0.1.0",
+  "description": "Audit a web app's usability by using it as each role in a real browser: find dead ends, fix the small things with tests, and report the rest by severity.",
+  "author": {
+    "name": "Ezequiel Scholz",
+    "url": "https://github.com/PapiScholz"
+  },
+  "homepage": "https://github.com/PapiScholz/usability-walkthrough",
+  "repository": "https://github.com/PapiScholz/usability-walkthrough",
+  "license": "MIT",
+  "keywords": ["usability", "ux", "audit", "walkthrough", "heuristics", "playwright", "accessibility"]
+}

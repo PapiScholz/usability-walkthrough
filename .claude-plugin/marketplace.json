@@ -1,0 +1,15 @@
+{
+  "name": "usability-walkthrough",
+  "description": "Usability Walkthrough skill for Claude",
+  "owner": {
+    "name": "Ezequiel Scholz",
+    "url": "https://github.com/PapiScholz"
+  },
+  "plugins": [
+    {
+      "name": "usability-walkthrough",
+      "source": "./",
+      "description": "Audit a web app's usability by using it as each role in a real browser."
+    }
+  ]
+}
