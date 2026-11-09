@@ -13,7 +13,7 @@ This repository holds instructions for an agent, not running code. The relevant 
 | Risk | How the skill guards against it |
 |---|---|
 | Acting on production data or real accounts | The method requires an isolated copy with test data and forbids targeting production |
-| Overwriting the user's work | Work happens in the agent's own git worktree; no commit or push without the user's explicit request |
+| Overwriting the user's work | The audit changes no product code; the only file it writes is the report, and no commit or push without the user's explicit request |
 | Leaking secrets into reports or screenshots | Reports and screenshots come from test data only |
 | Leaving processes running on the user's machine | The method ends by stopping every server it started |
 

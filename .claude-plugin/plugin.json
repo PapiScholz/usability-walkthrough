@@ -2,7 +2,7 @@
   "name": "usability-walkthrough",
   "displayName": "Usability Walkthrough",
   "version": "0.1.0",
-  "description": "Audit a web app's usability by using it as each role in a real browser: find dead ends, fix the small things with tests, and report the rest by severity.",
+  "description": "Audit a web app's usability by using it as each role in a real browser: measure the steps each task costs, find dead ends, and report measured simplifications ready to implement in a new session.",
   "author": {
     "name": "Ezequiel Scholz",
     "url": "https://github.com/PapiScholz"

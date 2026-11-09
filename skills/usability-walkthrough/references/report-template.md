@@ -1,33 +1,47 @@
 # Usability report
 
-Spec: <link>. Date: <YYYY-MM-DD>.
+Spec: <link>. Date: <YYYY-MM-DD>. App version / commit audited: <...>.
+
+Write it for a developer who was not in the audit and opens it in a fresh session. Nothing here may depend on the audit conversation.
 
 ## How it was done
-Environment (isolated copy, ports, never production), viewports, datasets per kind of customer, roles walked, traps provoked. Screenshot naming: `NN-*` before, `after-*` after.
+Environment (isolated copy, never production), viewports per role, datasets per kind of customer, roles walked, traps provoked. Screenshots in `<folder>/`, named `<task>-<step>.png`.
 
 **Already works well (don't touch):** <list>
 
 ## Summary
-| Severity | Total | Fixed here | Proposed |
-|---|---|---|---|
+| Task | Role | Done per day (estimate) | Today | Target | Proposal |
+|---|---|---|---|---|---|
+| Sell and charge in cash | Cashier | many | 7 steps, 2 decisions | 3 steps, 0 decisions | P1 |
 
-One paragraph: what weighs most for the end user.
+One paragraph: what the end user will notice most if P1 to P3 are done.
 
-## Findings
+## Proposals (ranked by frequency × steps saved)
 
-### High
-**U1. <What the user experiences, in their words>.** *Fixed | Structural, proposed.* Screenshot: `...`.
-- What happens, for which role, on which device.
-- **Fix:** what changed. / **Proposal:** what and its cost.
+### P1. <The task, said the way the user would say it>
+- **Who and how often:** <role, device, frequency>
+- **Today (measured):** step by step, with screenshots: `sell-01.png` … Steps: N · decisions: N · things to ignore on screen: N · waits: N
+- **Target:** step by step. Steps: N · decisions: N
+- **Levers:** remove · default · merge · adapt to customer kind · hide advanced
+- **Where in the code:** files and components likely touched (verify before editing)
+- **Acceptance criteria:** observable, testable statements ("a cashier with one payment method never sees the method picker")
+- **How to verify:** the browser test to write, and that it must fail on the current code first
+- **Cost and risk:** S / M / L; what could break; what users must relearn
+- **Prompt for a new session:**
+  ```
+  Implement proposal P1 from <report path>. Read only that section and the files it names.
+  Work in a branch, write the acceptance test first and watch it fail, then implement,
+  verify in the browser at <viewport>, run <type check and test commands>. No push.
+  ```
 
-(Medium, Low the same way.)
+(P2, P3… the same way.)
 
-## What changed
-| File | Change |
-|---|---|
+## Dead ends and wording
+| # | Severity | Role · screen | What the user experiences | Exit it should show | Screenshot |
+|---|---|---|---|---|---|
 
-## Verification
-Type check, browser suite (passed / total), new tests seen failing against the base branch, each fix checked in the browser. What was skipped and why.
+## Leads not confirmed
+Things suspected but not reproduced in the browser, with how to check them.
 
 ## Not verified
-Real devices, production latency, screen readers, flows only opened but not walked.
+Real devices, packaged app paths, production latency, screen readers, tasks not walked.

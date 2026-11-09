@@ -2,7 +2,7 @@
 
 ## North
 
-Any owner of a web app, without UX knowledge, can audit its usability: the skill interviews them, walks the app as each role, fixes the small things and hands over a report. The goal is an app that every kind of user in its target audience finds completely practical and intuitive.
+Any owner of a web app, without UX knowledge, can audit its usability: the skill interviews them, walks the app as each role, measures what each frequent task costs and hands over a report of measured simplifications, ready for the developer to implement in a new session. The goal is an app that every kind of user in its target audience finds completely practical and intuitive.
 
 ## Steps
 

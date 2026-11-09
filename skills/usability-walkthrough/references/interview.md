@@ -17,7 +17,7 @@ My guess: <answer + why>. If it's <alternative>, the audit changes because <...>
 | 2 | Kinds of customers | "Is it always <X>, or also <Y, Z>?" (a bakery, a bar and a buffet use the same app differently) |
 | 3 | Trigger | "Did something specific happen, or is it preventive?" If the owner themselves gets lost, that's the best signal |
 | 4 | Where it hurts | "Is it more that you can't **find** things, or that **doing** them takes too many steps, or that screens don't **make sense**?" |
-| 5 | Deliverable | Report only / report + small fixes / everything. Default guess: report + small fixes, structural as proposals |
+| 5 | Frequent tasks | "What does each role do many times a day?" Guess from the code and the help docs; these get measured first |
 
 Stop when you can predict their answer to your next three questions.
 
@@ -25,7 +25,7 @@ Stop when you can predict their answer to your next three questions.
 
 - Outcome · Users and devices · Kinds of customers · Why now
 - How we'll know it worked (the phases and the report)
-- Boundaries (worktree, isolated copy, no commit or push)
+- Boundaries (isolated copy, no product code changes, no commit or push)
 - Out of scope (always fill it)
 
 "Sounds good" or "whatever you think" is not a yes: offer two concrete options.

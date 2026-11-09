@@ -1,38 +1,31 @@
 # Spec: usability walkthrough
 
 ## 1. Objective
-Who uses it, why now, the rule ("nothing blocks without showing the way out"), and what "done" means:
-1. Every task in section 4 walked per role at 390 and 1280 px, with taps, doubts and exits recorded.
-2. A report with every finding (severity, role, screen, screenshot, proposal).
-3. Small findings fixed and verified; structural ones proposed with cost.
+Who uses it, why now, and what "done" means:
+1. Every frequent task in section 4 measured per role, on that role's device: steps, decisions, things to ignore, waits.
+2. A simpler version designed for each costly task, with a measured target.
+3. Every trap in section 5 provoked, with its exit recorded.
+4. A self-contained report the developer can implement from in a fresh session. No product code changes during the audit.
 
 ## 2. Assumptions (correct before approving)
-Scope (which apps or areas), devices per role, test data, plan or feature flags, ports.
+Scope (which apps or areas), devices and viewports per role, kinds of customers and their datasets, plan or feature flags, the first-run state a real install ships, ports.
 
 ## 3. Method
-Inventory (what each role sees and lands on) → walkthrough → heuristics (Nielsen; focus on status visibility and error recovery) → consistency → basic accessibility (44 px targets, contrast, focus) → speed measured inside the page.
+Inventory (what each role sees and lands on) → measure frequent tasks → provoke traps → per-screen measurement (`measure.md`) → design the simpler version with the levers (remove, default, merge, adapt, hide) → report.
 
-## 4. Tasks per role
-Frequent tasks first. For each role: the daily tasks and the first-day setup tasks. Then the traps from `traps.md` that apply.
+## 4. Frequent tasks per role
+| Role | Device | Task | How often |
+|---|---|---|---|
 
-## 5. Severity
-Blocking / High / Medium / Low (see SKILL.md).
+Daily tasks first, then the first-day setup.
 
-## 6. Small vs structural
-| Small: fix now | Structural: propose |
-|---|---|
-| Copy, labels, errors with an exit | Navigation or menu reorganization |
-| Disabled controls that say why | Per-customer-type setup |
-| Empty states with the action | Removing, merging or renaming modules |
-| Loading and confirmation states | Changing a whole flow |
-| Tap targets, focus, contrast, overflow | API or database changes |
+## 5. Traps
+The ones from `traps.md` that apply to this app.
 
-If a change touches more than one screen or changes what users already learned, it's structural.
+## 6. Commands and structure
+Real commands to start the isolated copy and seed it. Where the report and screenshots go (default `docs/usability/`).
 
-## 7. Commands and structure
-Real commands from the repo: start the isolated copy, type check, test suites. Where the report, screenshots and new tests go.
+## 7. Boundaries
+Always / Ask first / Never — including the repo state (untouched?), other sessions' files and production.
 
-## 8. Boundaries
-Always / Ask first / Never — including other sessions' files and production.
-
-## 9. Open questions
+## 8. Open questions

@@ -16,8 +16,9 @@ There is no automated check yet. Until there is:
 ## Repo rules
 
 - **Simple stays simple.** No commands, hooks or bundled scripts unless an ADR says why ([ADR-0001](docs/adr/0001-ship-as-a-plain-skill.md)).
-- **Never against production.** Any change that weakens isolation (own worktree, isolated copy, test data) is rejected.
-- **Fixes must be verified.** The "test seen failing against the old code" rule is part of the method, not a suggestion.
+- **Never against production.** Any change that weakens isolation (isolated copy, test data) is rejected.
+- **Report, don't implement.** The audit changes no product code; every proposal must stand alone in the report.
+- **Measured, not felt.** A proposal without steps before and after is not a proposal.
 
 ## Commits and pull requests
 
